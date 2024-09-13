@@ -4,6 +4,12 @@
 #include <QtWidgets/QApplication>
 #include <QPushButton>
 
-void MainWindow();
+class Window : public QWidget {
+	public:
+	explicit Window(QWidget *parent = 0);
+	private:
+	QPushButton *testBtn;
+	QPushButton *quitBtn;
+};
 #endif
 
