@@ -338,9 +338,9 @@
 	"HEADERS" : 
 	[
 		[
-			"/home/monac/Projects/C++/Tetris/mainwindow.h",
+			"/home/monac/Projects/C++/Tetris/src/mainwindow.h",
 			"MU",
-			"EWIEGA46WW/moc_mainwindow.cpp",
+			"UVLADIE3JM/moc_mainwindow.cpp",
 			null
 		]
 	],
@@ -402,8 +402,8 @@
 	"SETTINGS_FILE" : "/home/monac/Projects/C++/Tetris/build/CMakeFiles/Tetris_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "/home/monac/Projects/C++/Tetris/main.cpp", "MU", null ],
-		[ "/home/monac/Projects/C++/Tetris/mainwindow.cpp", "MU", null ]
+		[ "/home/monac/Projects/C++/Tetris/src/main.cpp", "MU", null ],
+		[ "/home/monac/Projects/C++/Tetris/src/mainwindow.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

@@ -3,9 +3,9 @@ Tetris_autogen/timestamp: \
 	/home/monac/Projects/C++/Tetris/build/CMakeFiles/3.30.3/CMakeCCompiler.cmake \
 	/home/monac/Projects/C++/Tetris/build/CMakeFiles/3.30.3/CMakeCXXCompiler.cmake \
 	/home/monac/Projects/C++/Tetris/build/CMakeFiles/3.30.3/CMakeSystem.cmake \
-	/home/monac/Projects/C++/Tetris/main.cpp \
-	/home/monac/Projects/C++/Tetris/mainwindow.cpp \
-	/home/monac/Projects/C++/Tetris/mainwindow.h \
+	/home/monac/Projects/C++/Tetris/src/main.cpp \
+	/home/monac/Projects/C++/Tetris/src/mainwindow.cpp \
+	/home/monac/Projects/C++/Tetris/src/mainwindow.h \
 	/usr/lib/cmake/Qt6/3rdparty/kwin/FindXKB.cmake \
 	/usr/lib/cmake/Qt6/FindWrapAtomic.cmake \
 	/usr/lib/cmake/Qt6/FindWrapOpenGL.cmake \

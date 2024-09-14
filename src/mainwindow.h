@@ -4,6 +4,7 @@
 #include <QtWidgets/QApplication>
 #include <QPushButton>
 
+namespace UI {
 class Window : public QWidget {
 	public:
 	explicit Window(QWidget *parent = 0);
@@ -11,5 +12,6 @@ class Window : public QWidget {
 	QPushButton *testBtn;
 	QPushButton *quitBtn;
 };
+}
 #endif
 

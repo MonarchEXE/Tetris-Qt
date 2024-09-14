@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 
-Window::Window(QWidget *parent) :
+UI::Window::Window(QWidget *parent) :
 	QWidget(parent) {
 		setFixedSize(800, 400);
 
