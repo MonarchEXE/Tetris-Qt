@@ -1,5 +1,0 @@
-/home/monac/Projects/C++/Tetris/build/CMakeFiles/Tetris.dir
-/home/monac/Projects/C++/Tetris/build/CMakeFiles/edit_cache.dir
-/home/monac/Projects/C++/Tetris/build/CMakeFiles/rebuild_cache.dir
-/home/monac/Projects/C++/Tetris/build/CMakeFiles/Tetris_autogen_timestamp_deps.dir
-/home/monac/Projects/C++/Tetris/build/CMakeFiles/Tetris_autogen.dir
