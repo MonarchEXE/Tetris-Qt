@@ -12,13 +12,14 @@ A personal project of recreating Tetris in C++ using the Qt framework.
 
 - Clone this repo to an empty directory.
 
+Future mentions of this directory are marked as *dir*.
+
 ```
 git clone https://github.com/MonarchEXE/Tetris-Qt.git <empty-repo-path>
 ```
 
-Future mentions of this directory are marked as *dir*.
-
-Generate the CMake build files. It is recommended to generate the files in a _build_ sub-directory for a clean directory tree.
+- Generate the CMake build files.
+It is recommended to generate the files in a _build_ sub-directory for a clean directory tree.
 
 ```
 cmake -S <dir> -B <dir>/build 
