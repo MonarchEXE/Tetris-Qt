@@ -1,0 +1,9 @@
+# clangd LSP files
+.cache/
+
+# CMake build files
+build/
+
+# Personal notes
+TODO.txt
+
