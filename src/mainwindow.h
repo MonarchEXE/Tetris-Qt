@@ -5,12 +5,12 @@
 #include <QPushButton>
 
 namespace UI {
-class Window : public QWidget {
-	public:
-	explicit Window(QWidget *parent = 0);
-	private:
-	QPushButton *testBtn;
-	QPushButton *quitBtn;
+	class Window : public QWidget {
+		public:
+			explicit Window(QWidget *parent = 0);
+		private:
+			QPushButton *quitBtn;
+			QWidget *gameWindow;
 };
 }
 #endif
