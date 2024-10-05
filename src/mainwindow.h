@@ -11,11 +11,14 @@ namespace UI {
 			explicit Window(QWidget *parent = 0);
 		public slots:
 			void NewGame();
+		private slots:
+			void PauseMenu();
 		private:
 			QPushButton *quitBtn;
 			QPushButton *gameBtn;
 			QLabel *gameTitle;
 			QWidget *gameWindow;
+			QPushButton *pauseBtn;
 	};
 	class GameWindow {
 		public:

@@ -12,7 +12,6 @@ UI::Window::Window(QWidget *parent) :
 
 		gameTitle = new QLabel("TETRIS", gameWindow);
 		gameTitle->setGeometry(60, 160, 80, 30);
-		gameTitle->setPalette(QPalette(QColor(0, 0, 0)));
 		gameTitle->setAlignment(Qt::AlignHCenter);
 		gameTitle->setTextFormat(Qt::RichText);
 
@@ -29,6 +28,11 @@ UI::Window::Window(QWidget *parent) :
 		gameBtn->hide();
 		quitBtn->hide();
 
+		pauseBtn = new QPushButton("||", this);
+		connect(pauseBtn, &QPushButton::clicked, this, &UI::Window::PauseMenu, Qt::QueuedConnection);
+		pauseBtn->setGeometry(190, 10, 20, 20);
+		pauseBtn->show();
+
 		/*
 		 * TODO Display empty game window
 		 * TODO Empty display for reserved tetroid
@@ -36,3 +40,8 @@ UI::Window::Window(QWidget *parent) :
 		*/
 
 	}
+	void UI::Window::PauseMenu() {
+		gameTitle->show();
+		quitBtn->show();
+	}
+
