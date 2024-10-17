@@ -2,8 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QtWidgets/QApplication>
-#include <QPushButton>
 #include <QLabel>
+#include <QPixmap>
+#include <QPushButton>
 
 namespace UI {
 	class Window : public QWidget {
@@ -19,14 +20,6 @@ namespace UI {
 			QLabel *gameTitle;
 			QWidget *gameWindow;
 			QPushButton *pauseBtn;
-	};
-	class GameWindow {
-		public:
-		private:
-			Window *gameWindow;
-			Window *nextTetroidWindow;
-			Window *savedTetroidWindow;
-			QObject *savedTetroid;
 	};
 }
 
