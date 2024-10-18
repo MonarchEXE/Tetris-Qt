@@ -11,6 +11,6 @@ qt_standard_project_setup()
 
 # add_subdirectory(...)
 # below code located in CMakeLists.txt found in ... subdir
-qt_add_executable(Tetris src/main.cpp src/mainwindow.h src/mainwindow.cpp)
+qt_add_executable(Tetris src/main.cpp src/gamewindow.h src/gamewindow.cpp src/mainwindow.h src/mainwindow.cpp)
 
 target_link_libraries(Tetris PRIVATE Qt6::Widgets)
