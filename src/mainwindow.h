@@ -15,11 +15,11 @@ namespace UI {
 		private slots:
 			void PauseMenu();
 		private:
-			QPushButton *quitBtn;
-			QPushButton *gameBtn;
-			QLabel *gameTitle;
-			QWidget *gameWindow;
-			QPushButton *pauseBtn;
+			QPushButton* quitBtn;
+			QPushButton* gameBtn;
+			QLabel* gameTitle;
+			QWidget* gameWindow;
+			QPushButton* pauseBtn;
 	};
 }
 
