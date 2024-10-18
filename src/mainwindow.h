@@ -5,6 +5,7 @@
 #include <QLabel>
 #include <QPixmap>
 #include <QPushButton>
+#include "gamewindow.h"
 
 namespace UI {
 	class Window : public QWidget {
@@ -15,10 +16,10 @@ namespace UI {
 		private slots:
 			void PauseMenu();
 		private:
+			Game::GameWindow* gameWindow;
 			QPushButton* quitBtn;
 			QPushButton* gameBtn;
 			QLabel* gameTitle;
-			QWidget* gameWindow;
 			QPushButton* pauseBtn;
 	};
 }

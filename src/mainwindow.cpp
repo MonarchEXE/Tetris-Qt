@@ -6,20 +6,16 @@ UI::Window::Window(QWidget *parent) :
 		// TODO - Create game window (QWidget child to window)
 		// TODO - Initialize tetroid objs
 
-		gameWindow = new QWidget(this);
-		gameWindow->setGeometry(10, 10, 200, 480);
-		gameWindow->setPalette(QPalette(QColor(20, 20, 20)));
-
-		gameTitle = new QLabel("TETRIS", gameWindow);
+		gameTitle = new QLabel("TETRIS", this);
 		gameTitle->setGeometry(60, 160, 80, 30);
 		gameTitle->setAlignment(Qt::AlignHCenter);
 		gameTitle->setTextFormat(Qt::RichText);
 
-		gameBtn = new QPushButton("New Game", gameWindow);
+		gameBtn = new QPushButton("New Game", this);
 		gameBtn->setGeometry(60, 215, 80, 30);
 		connect(gameBtn, &QPushButton::clicked, this, &UI::Window::NewGame, Qt::QueuedConnection);
 
-		quitBtn = new QPushButton("Quit", gameWindow);
+		quitBtn = new QPushButton("Quit", this);
 		quitBtn ->setGeometry(60, 255, 80, 30);
 		connect(quitBtn, &QPushButton::clicked, this, &QWidget::close, Qt::QueuedConnection);
 	}
@@ -33,6 +29,10 @@ UI::Window::Window(QWidget *parent) :
 		pauseBtn->setGeometry(190, 10, 20, 20);
 		pauseBtn->show();
 
+		gameWindow = new Game::GameWindow();
+		gameWindow->setGeometry(10, 10, 200, 480);
+
+
 		/*
 		 * TODO Display empty game window
 		 * TODO Empty display for reserved tetroid
@@ -44,4 +44,3 @@ UI::Window::Window(QWidget *parent) :
 		gameTitle->show();
 		quitBtn->show();
 	}
-
