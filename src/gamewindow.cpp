@@ -1,5 +1,7 @@
 #include "gamewindow.h"
 
+const char* imgPath = "/home/monac/Projects/C++/Tetris/lib/tetrominoes";
+
 Game::GameWindow::GameWindow(QWidget* parent) :
 	QWidget(parent) {
 		setGeometry(10, 10, 200, 480);
@@ -9,12 +11,15 @@ Game::GameWindow::GameWindow(QWidget* parent) :
 
 Game::Tetroid::Tetroid(QLabel *parent) :
 	QLabel(parent) {
+		tetroidShape = new QPixmap();
 		tetroidShape = GetTetroidShape(tetroidShape);
+		this->setPixmap(*tetroidShape);
+		// It's this function call. This is calling an undefined reference.
 	}
 
 /******* PRIVATE FUNCTIONS *******/
 
-	QImage* GetTetroidShape(QImage* &tetroidShape) { // BUG - cmake exits; states func is undefined
+	QPixmap* Game::Tetroid::GetTetroidShape(QPixmap* &tetroidShape) { // BUG - cmake exits; there's a missing library????
 	/*
 	 * Randomly selects a tetroid shape for game to draw
 	 * Tetromino rotation calls for img manipulation
@@ -22,33 +27,46 @@ Game::Tetroid::Tetroid(QLabel *parent) :
 	 */
 	// int type cast handles the rounding
 		int* shape = new int;
+		char* relativePath = new char[100];
+		strcpy(relativePath, imgPath);
 		*shape = std::rand() % 8;
 		switch(*shape){
 			// pretty sure the compiler won't know how to handle '~'
+			// TODO - Update from absolute path to relative path search (or update the const to have the absolute path)
 			case 1:
-				*tetroidShape = QImage(QString("~/lib/tetrominoes/Cube.png"),nullptr);
+				strcat(relativePath, "/Cube.png");
+				// Hey dummy, can't concat const str's together
+				*tetroidShape = QPixmap(QString(relativePath),nullptr);
 				break;
 			case 2:
-				*tetroidShape = QImage(QString("~/lib/tetrominoes/L-Inverted.png"),nullptr);
+				strcat(relativePath, "/L-Inverted.png");
+				*tetroidShape = QPixmap(QString(relativePath),nullptr);
 				break;
 			case 3:
-				*tetroidShape = QImage(QString("~/lib/tetrominoes/L-R_Zigzag.png"),nullptr);
+				strcat(relativePath, "/L-R_Zigzag.png");
+				*tetroidShape = QPixmap(QString(relativePath),nullptr);
 				break;
 			case 4:
-				*tetroidShape = QImage(QString("~/lib/tetrominoes/L-Shape.png"),nullptr);
+				strcat(relativePath, "/L-Shape.png");
+				*tetroidShape = QPixmap(QString(relativePath),nullptr);
 				break;
 			case 5:
-				*tetroidShape = QImage(QString("~/lib/tetrominoes/Long.png"),nullptr);
+				strcat(relativePath, "/Long.png");
+				*tetroidShape = QPixmap(QString(relativePath),nullptr);
 				break;
 			case 6:
-				*tetroidShape = QImage(QString("~/lib/tetrominoes/R-L_Zigzag.png"),nullptr);
+				strcat(relativePath, "/R-L_Zigzag.png");
+				*tetroidShape = QPixmap(QString(relativePath),nullptr);
 				break;
 			case 7:
-				*tetroidShape = QImage(QString("~/lib/tetrominoes/T-Shape.png"),nullptr);
+				strcat(relativePath, "/T-Shape.png");
+				*tetroidShape = QPixmap(QString(relativePath),nullptr);
 				break;
 		}
 		delete(shape);
+		delete[](relativePath);
 		shape = nullptr;
+		relativePath= nullptr;
 		return tetroidShape;
 	}
 

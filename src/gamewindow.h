@@ -1,17 +1,18 @@
 #ifndef GAMEWINDOW_H
 #define GAMEWINDOW_H
 
-#include <QImage>
+#include <QPixmap>
 #include <QLabel>
 #include <QWidget>
+#include <QString>
 
 namespace Game {
 	class Tetroid : public QLabel {
 		public: 
 			explicit Tetroid(QLabel *parent = 0);
 		private:
-			QImage* tetroidShape;
-			QImage* GetTetroidShape(QImage* &tetroidShape);
+			QPixmap* tetroidShape;
+			QPixmap* GetTetroidShape(QPixmap* &tetroidShape);
 			int* height;
 			int* width;
 	};
