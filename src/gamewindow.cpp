@@ -36,7 +36,6 @@ Game::Tetroid::Tetroid(QLabel *parent) :
 			case 1:
 				strcat(relativePath, "/Cube.png");
 				// Hey dummy, can't concat const str's together
-				*tetroidShape = QPixmap(QString(relativePath),nullptr);
 				break;
 			case 2:
 				strcat(relativePath, "/L-Inverted.png");
@@ -63,6 +62,9 @@ Game::Tetroid::Tetroid(QLabel *parent) :
 				*tetroidShape = QPixmap(QString(relativePath),nullptr);
 				break;
 		}
+		
+		*tetroidShape = QPixmap(QString(relativePath),nullptr);
+
 		delete(shape);
 		delete[](relativePath);
 		shape = nullptr;
