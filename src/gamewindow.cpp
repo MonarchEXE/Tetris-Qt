@@ -31,35 +31,27 @@ Game::Tetroid::Tetroid(QLabel *parent) :
 		strcpy(relativePath, imgPath);
 		*shape = std::rand() % 8;
 		switch(*shape){
-			// pretty sure the compiler won't know how to handle '~'
 			// TODO - Update from absolute path to relative path search (or update the const to have the absolute path)
 			case 1:
 				strcat(relativePath, "/Cube.png");
-				// Hey dummy, can't concat const str's together
 				break;
 			case 2:
 				strcat(relativePath, "/L-Inverted.png");
-				*tetroidShape = QPixmap(QString(relativePath),nullptr);
 				break;
 			case 3:
 				strcat(relativePath, "/L-R_Zigzag.png");
-				*tetroidShape = QPixmap(QString(relativePath),nullptr);
 				break;
 			case 4:
 				strcat(relativePath, "/L-Shape.png");
-				*tetroidShape = QPixmap(QString(relativePath),nullptr);
 				break;
 			case 5:
 				strcat(relativePath, "/Long.png");
-				*tetroidShape = QPixmap(QString(relativePath),nullptr);
 				break;
 			case 6:
 				strcat(relativePath, "/R-L_Zigzag.png");
-				*tetroidShape = QPixmap(QString(relativePath),nullptr);
 				break;
 			case 7:
 				strcat(relativePath, "/T-Shape.png");
-				*tetroidShape = QPixmap(QString(relativePath),nullptr);
 				break;
 		}
 		
