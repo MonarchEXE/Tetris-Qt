@@ -1,0 +1,39 @@
+ - Read thru CMakeLists.txt properly
+	- link: https://cmake.org/cmake/help/book/mastering-cmake/chapter/Getting%20Started.html
+- Generate QtWidgets window
+	- link: https://doc.qt.io/qt-6/cmake-build-on-cmdline.html
+
+---------------------------------------------------------------------------------------------------------------
+
+Tetroid collisions: 1 square can cause the tetroid to float
+- Pixel collision (detect when an edge hits another edge)
+- Grid collision (tetroid tries going to array loc == 1; stays above)
+
+---------------------------------------------------------------------------------------------------------------
+
+Drawing tetroids.
+- File Input from /lib/Tetroids
+- Image input resized (shrink to 20x20 px^2 per cube, but maintain OG dimensions)
+- Tetroid drawn to window via QPixmap & QImage
+- Tetroids fall set no. of pixels / set time
+- Pause btn stops tetroids from falling
+
+---------------------------------------------------------------------------------------------------------------
+
+Tetris Game Logic
+- Tetroids fall set no. of pixels / set time (e.g. seconds)
+- Fall spd increases / time (difficulty setting)
+- Tetroids can be rotated and preserved for future use
+- 1 block collision can suspend entire tetroid.
+- 1+ lines filled w/ blocks knocks it out, blocks above fall and fill space below
+- Game ends once 1+ blocks go past top line (i.e. (X, 0))
+
+
+
+
+
+Music and Audio elements are simply what the player hears during the videogame. This can range from character dialogue, background sound effects
+and audio cues. Audio cues are certain sfx triggered by events (character moving causes footsteps, player shoots a gun plays a gunshot)
+
+
+
