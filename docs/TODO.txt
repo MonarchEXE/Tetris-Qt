@@ -18,6 +18,10 @@ Drawing tetroids.
 - Tetroids fall set no. of pixels / set time
 - Pause btn stops tetroids from falling
 
+TODO
+- Resize all tetromino to be 20x20 per sq
+- Have QPixmaps scale w/ screen resolution (20x20) is a minimum
+
 ---------------------------------------------------------------------------------------------------------------
 
 Tetris Game Logic
@@ -27,13 +31,5 @@ Tetris Game Logic
 - 1 block collision can suspend entire tetroid.
 - 1+ lines filled w/ blocks knocks it out, blocks above fall and fill space below
 - Game ends once 1+ blocks go past top line (i.e. (X, 0))
-
-
-
-
-
-Music and Audio elements are simply what the player hears during the videogame. This can range from character dialogue, background sound effects
-and audio cues. Audio cues are certain sfx triggered by events (character moving causes footsteps, player shoots a gun plays a gunshot)
-
 
 
