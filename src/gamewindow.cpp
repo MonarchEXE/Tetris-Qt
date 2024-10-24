@@ -1,6 +1,6 @@
 #include "gamewindow.h"
 
-const char* imgPath = "/home/monac/Projects/C++/Tetris/lib/tetrominoes";
+const char* imgPath = "/home/kurt/Projects/C++/Tetris/lib/tetrominoes";
 
 Game::GameWindow::GameWindow(QWidget* parent) :
 	QWidget(parent) {
