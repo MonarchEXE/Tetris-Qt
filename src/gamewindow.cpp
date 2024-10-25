@@ -9,7 +9,7 @@ Game::GameWindow::GameWindow(QWidget* parent) :
 		tetromino->show(); // TEST ONLY, DO NOT ACTUALLY KEEP THIS, FUTURE ME
 	}
 
-Game::Tetroid::Tetroid(QLabel *parent) :
+Game::Tetroid::Tetroid(QWidget *parent) :
 	QLabel(parent) {
 		tetroidShape = new QPixmap();
 		tetroidShape = GetTetroidShape(tetroidShape);

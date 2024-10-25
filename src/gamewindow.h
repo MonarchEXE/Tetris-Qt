@@ -9,7 +9,7 @@
 namespace Game {
 	class Tetroid : public QLabel {
 		public: 
-			explicit Tetroid(QLabel *parent = 0);
+			explicit Tetroid(QWidget *parent = 0);
 		private:
 			QPixmap* tetroidShape;
 			QPixmap* GetTetroidShape(QPixmap* &tetroidShape);
