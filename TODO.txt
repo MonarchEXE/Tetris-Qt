@@ -1,0 +1,6 @@
+Tetroids
+- Get tetroid shapes as separate imgs [DONE]
+- Draw Tetroid obj (done via QPixmap)
+- Tetroid-Border obj collision
+- New tetroid upon current border collision
+

@@ -29,12 +29,12 @@ UI::Window::Window(QWidget *parent) :
 		pauseBtn->setGeometry(190, 10, 20, 20);
 		pauseBtn->show();
 
-		gameWindow = new Game::GameWindow();
-		gameWindow->setGeometry(10, 10, 200, 480);
+		gameWindow = new Game::GameWindow(this);
+		gameWindow->setGeometry(10, 10, 100, 480);
+		gameWindow->show();
 
 
 		/*
-		 * TODO Display empty game window
 		 * TODO Empty display for reserved tetroid
 		 * TODO Empty display for next tetroid
 		*/

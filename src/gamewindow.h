@@ -9,18 +9,18 @@
 namespace Game {
 	class Tetroid : public QLabel {
 		public: 
-			explicit Tetroid(QWidget *parent = 0);
+			explicit Tetroid(QWidget *parent);
 		private:
-			QPixmap* tetroidShape;
-			QPixmap* GetTetroidShape(QPixmap* &tetroidShape);
 			int* height;
 			int* width;
+			QPixmap* tetroidShape;
+			QPixmap* GetTetroidShape(QPixmap* &tetroidShape);
 	};
 
 
 	 class GameWindow :public QWidget{
 		public:
-			explicit GameWindow(QWidget* parent = 0);
+			explicit GameWindow(QWidget* parent);
 		private:
 			Tetroid* tetromino;
 			QObject* tetrisLine; //placeholder, type is not yet chosen
