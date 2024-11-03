@@ -1,6 +1,6 @@
 #include "gamewindow.h"
 
-const char* imgPath = "/home/kurt/Projects/C++/Tetris/lib/tetrominoes";
+const char* TETROMINO_IMAGE_PATH = "/home/kurt/Projects/C++/Tetris/lib/tetrominoes";
 
 Game::Tetroid::Tetroid(QWidget *parent) :
 	QLabel(parent) {
@@ -21,7 +21,7 @@ QPixmap* Game::Tetroid::GetTetroidShape(QPixmap* &tetroidShape) { // BUG - cmake
 // int type cast handles the rounding
 	int* shape = new int;
 	char* relativePath = new char[100];
-	strcpy(relativePath, imgPath);
+	strcpy(relativePath, TETROMINO_IMAGE_PATH);
 	*shape = std::rand() % 8;
 	switch(*shape){
 		// TODO - Update from absolute path to relative path search (or update the const to have the absolute path)
