@@ -36,9 +36,3 @@ As of 09-15-2024, executable is located in the build directory. README will be u
 ```
 make -C <dir>/build
 ```
-
-### Windows
-<!-- This assumes CMake sets the default compile file on Windows is Ninja. Then again, if they know how to change to Unix Makefiles, they'll be fine. -->
-```
-ninja -C <dir>/build
-```
