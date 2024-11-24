@@ -2,7 +2,7 @@
 
 UI::Window::Window(QWidget *parent) :
 	QWidget(parent) {
-		setFixedSize(220, 500);
+		setFixedSize(UI::MIN_WIDTH, UI::MIN_HEIGHT);
 		// TODO - Create game window (QWidget child to window)
 		// TODO - Initialize tetroid objs
 

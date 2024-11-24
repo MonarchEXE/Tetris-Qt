@@ -8,6 +8,8 @@
 #include "gamewindow.h"
 
 namespace UI {
+	const int MIN_HEIGHT = 500;
+	const int MIN_WIDTH = 220;
 	class Window : public QWidget {
 		public:
 			explicit Window(QWidget *parent = 0);

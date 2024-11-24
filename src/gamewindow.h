@@ -7,6 +7,8 @@
 #include <QString>
 
 namespace Game {
+	const int MIN_HEIGHT = 480;
+	const int MIN_WIDTH = 200;
 	class Tetroid : public QLabel {
 		public: 
 			explicit Tetroid(QWidget *parent);
