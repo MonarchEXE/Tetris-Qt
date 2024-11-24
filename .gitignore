@@ -3,3 +3,7 @@
 
 # CMake build files
 build/
+
+# Personal shell scripts
+open.sh
+compile.sh
