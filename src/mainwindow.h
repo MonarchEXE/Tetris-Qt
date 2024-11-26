@@ -2,17 +2,22 @@
 #define MAINWINDOW_H
 
 #include <QtWidgets/QApplication>
+#include <QGraphicsScene>
+#include <QGraphicsView>
 #include <QLabel>
-#include <QPixmap>
 #include <QPushButton>
 #include "gamewindow.h"
 
 namespace UI {
 	const int MIN_HEIGHT = 500;
 	const int MIN_WIDTH = 220;
-	class Window : public QWidget {
+	class Window : public QGraphicsScene {
 		public:
-			explicit Window(QWidget *parent = 0);
+			explicit Window(QObject* parent = 0);
+	};
+	class Menu : public QWidget {
+		public:
+			explicit Menu(QWidget *parent = 0);
 		public slots:
 			void NewGame();
 		private slots:
@@ -25,6 +30,5 @@ namespace UI {
 			QPushButton* pauseBtn;
 	};
 }
-
 #endif
 
