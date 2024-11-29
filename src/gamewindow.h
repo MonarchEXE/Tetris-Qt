@@ -1,6 +1,9 @@
 #ifndef GAMEWINDOW_H
 #define GAMEWINDOW_H
 
+#include <QGraphicsPixmapItem>
+#include <QGraphicsScene>
+#include <QKeyEvent>
 #include <QPixmap>
 #include <QLabel>
 #include <QWidget>
@@ -9,20 +12,25 @@
 namespace Game {
 	const int MIN_HEIGHT = 480;
 	const int MIN_WIDTH = 200;
-	class Tetroid : public QLabel {
+	const int TILE_SIZE = 20;
+
+	class Tetroid : public QGraphicsPixmapItem {
 		public: 
-			explicit Tetroid(QWidget *parent);
+			explicit Tetroid(QGraphicsItem *parent);
 		private:
 			int* height;
 			int* width;
 			QPixmap* tetroidShape;
-			QPixmap* GetTetroidShape(QPixmap* &tetroidShape);
+			QPixmap* GetShape(QPixmap* &tetroidShape);
+			void Movement(QKeyEvent* key_press);
 	};
 
 
-	 class GameWindow :public QWidget{
+	 class GameWindow :public QGraphicsScene {
 		public:
 			explicit GameWindow(QWidget* parent);
+			void displayItems();
+
 		private:
 			Tetroid* tetromino;
 			QObject* tetrisLine; //placeholder, type is not yet chosen
