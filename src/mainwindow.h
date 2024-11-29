@@ -11,14 +11,7 @@
 namespace UI {
 	const int MIN_HEIGHT = 500;
 	const int MIN_WIDTH = 300;
-	class Window : public QGraphicsScene {
-		public:
-			explicit Window(QObject* parent = 0);
-			Game::Tetroid* tetromino;
-		private:
-			// Game::Tetroid* tetromino;
-			
-	};
+	
 	class Menu : public QWidget {
 		public:
 			explicit Menu(QWidget *parent = 0);
