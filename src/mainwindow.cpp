@@ -3,8 +3,8 @@
 UI::Menu::Menu(QWidget *parent) :
 	QWidget(parent) {
 		setMinimumSize(UI::MIN_WIDTH, UI::MIN_HEIGHT);
-		// TODO - Create game window (QWidget child to window)
-		// TODO - Initialize tetroid objs
+		// TODO:  Create game window (QWidget child to window)
+		// TODO:  Initialize tetroid objs
 
 		gameTitle = new QLabel("TETRIS", this);
 		gameTitle->setGeometry(UI::MIN_WIDTH/2 - 40, 160, 80, 30);
@@ -17,7 +17,7 @@ UI::Menu::Menu(QWidget *parent) :
 
 		quitBtn = new QPushButton("Quit", this);
 		quitBtn ->setGeometry(UI::MIN_WIDTH/2 - 40, 255, 80, 30);
-		// TODO - Only closes Widget inside of QGraphicsScene
+		// TODO: - Only closes Widget inside of QGraphicsScene
 		connect(quitBtn, &QPushButton::clicked, this, &QWidget::close, Qt::QueuedConnection);
 	}
 
@@ -40,9 +40,9 @@ UI::Menu::Menu(QWidget *parent) :
 		view->show();
 
 		/*
-		 * TODO Empty display for reserved tetroid
-		 * TODO Empty display for next tetroid
-		 * TODO - Offset QGraphicsScene by 10-20px (aka give it a border)
+		 * TODO: Empty display for reserved tetroid
+		 * TODO: Empty display for next tetroid
+		 * TODO: Offset QGraphicsScene by 10-20px (aka give it a border)
 		*/
 
 	}

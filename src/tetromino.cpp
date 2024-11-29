@@ -14,23 +14,23 @@ Game::Tetroid::Tetroid(QGraphicsItem *parent) :
 
 /******* PRIVATE FUNCTIONS *******/
 
-// NOTE : not needed as part of Game::Tetroid as it cares about QGraphicsItem in focus
+// NOTE: not needed as part of Game::Tetroid as it cares about QGraphicsItem in focus
 void QGraphicsItem::keyPressEvent(QKeyEvent* key_press) {
 	if(key_press->key() == Qt::Key_Left && this->x() != 0) {
 		this->setX(this->x() - Game::TILE_SIZE);
 		std::cout << this->x();
 		return;
 	}
-	// FIX - Does not take into account tetromino width
+	// FIX: Does not take into account tetromino width
 	if(key_press->key() == Qt::Key_Right && this->x() != Game::MIN_WIDTH) {
 		this->setX(this->x() + Game::TILE_SIZE);
 		return;
 	}
-	// - Does not take into account tetromino height
+	// FIX: Does not take into account tetromino height
 	if(key_press->key() == Qt::Key_Down && this->y() != Game::MIN_HEIGHT) {
 		this->setY(this->y() + Game::TILE_SIZE);
 	}
-	// FIX - Does not rotate on at a centered point
+	// FIX:Does not rotate on at a centered point
 	if(key_press->key() == Qt::Key_Up) {
 		this->setRotation(this->rotation() + 90);
 	}
