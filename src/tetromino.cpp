@@ -5,8 +5,8 @@ const char* TETROMINO_IMAGE_PATH = "/home/kurt/Projects/C++/Tetris/lib/tetromino
 
 Game::Tetroid::Tetroid(QGraphicsItem *parent) :
 	QGraphicsPixmapItem(parent) {
-		tetroidShape = new QPixmap();
-		this->setPixmap(*Game::Tetroid::GetShape(tetroidShape));
+		tetroid_shape = new QPixmap();
+		this->setPixmap(*Game::Tetroid::GetShape(tetroid_shape));
 		this->setFlag(QGraphicsItem::ItemIsFocusable);
 		this->setFocus();
 
@@ -38,7 +38,7 @@ void QGraphicsItem::keyPressEvent(QKeyEvent* key_press) {
 	return;
 }
 
-QPixmap* Game::Tetroid::GetShape(QPixmap* &tetroidShape) { // BUG - cmake exits; there's a missing library????
+QPixmap* Game::Tetroid::getShape(QPixmap* &tetroid_shape) { // BUG - cmake exits; there's a missing library????
 /*
  * Randomly selects a tetroid shape for game to draw
  * Tetromino rotation calls for img manipulation
@@ -74,11 +74,11 @@ QPixmap* Game::Tetroid::GetShape(QPixmap* &tetroidShape) { // BUG - cmake exits;
 			break;
 	}
 	
-	*tetroidShape = QPixmap(QString(relativePath),nullptr);
+	*tetroid_shape = QPixmap(QString(relativePath),nullptr);
 
 	delete(shape);
 	delete[](relativePath);
 	shape = nullptr;
 	relativePath= nullptr;
-	return tetroidShape;
+	return tetroid_shape;
 }

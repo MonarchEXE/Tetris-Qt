@@ -11,30 +11,30 @@ UI::Menu::Menu(QWidget *parent) :
 		gameTitle->setAlignment(Qt::AlignHCenter);
 		gameTitle->setTextFormat(Qt::RichText);
 
-		gameBtn = new QPushButton("New Game", this);
-		gameBtn->setGeometry(UI::MIN_WIDTH/2 - 40, 215, 80, 30);
-		connect(gameBtn, &QPushButton::clicked, this, &UI::Menu::NewGame, Qt::QueuedConnection);
+		game_btn = new QPushButton("New Game", this);
+		game_btn->setGeometry(UI::MIN_WIDTH/2 - 40, 215, 80, 30);
+		connect(game_btn, &QPushButton::clicked, this, &UI::Menu::newGame, Qt::QueuedConnection);
 
-		quitBtn = new QPushButton("Quit", this);
-		quitBtn ->setGeometry(UI::MIN_WIDTH/2 - 40, 255, 80, 30);
+		quit_btn = new QPushButton("Quit", this);
+		quit_btn ->setGeometry(UI::MIN_WIDTH/2 - 40, 255, 80, 30);
 		// TODO: - Only closes Widget inside of QGraphicsScene
-		connect(quitBtn, &QPushButton::clicked, this, &QWidget::close, Qt::QueuedConnection);
+		connect(quit_btn, &QPushButton::clicked, this, &QWidget::close, Qt::QueuedConnection);
 	}
 
-	void UI::Menu::NewGame() {
+	void UI::Menu::newGame() {
 		gameTitle->hide();
-		gameBtn->hide();
-		quitBtn->hide();
+		game_btn->hide();
+		quit_btn->hide();
 
-		pauseBtn = new QPushButton("||", this);
-		connect(pauseBtn, &QPushButton::clicked, this, &UI::Menu::PauseMenu, Qt::QueuedConnection);
-		pauseBtn->setGeometry(UI::MIN_WIDTH - 30, 10, 20, 20);
-		pauseBtn->show();
+		pause_btn = new QPushButton("||", this);
+		connect(pause_btn, &QPushButton::clicked, this, &UI::Menu::pauseMenu, Qt::QueuedConnection);
+		pause_btn->setGeometry(UI::MIN_WIDTH - 30, 10, 20, 20);
+		pause_btn->show();
 
-		gameWindow = new Game::GameWindow(this);
-		gameWindow->setSceneRect(0, 0, Game::MIN_WIDTH, Game::MIN_HEIGHT);
+		game_window = new Game::GameWindow(this);
+		game_window->setSceneRect(0, 0, Game::MIN_WIDTH, Game::MIN_HEIGHT);
 
-		view = new QGraphicsView(gameWindow, this);
+		view = new QGraphicsView(game_window, this);
 		view->setMinimumHeight(Game::MIN_HEIGHT);
 		view->setMinimumWidth(Game::MIN_WIDTH);
 		view->show();
@@ -46,8 +46,8 @@ UI::Menu::Menu(QWidget *parent) :
 		*/
 
 	}
-	void UI::Menu::PauseMenu() {
+	void UI::Menu::pauseMenu() {
 		view->hide();
 		gameTitle->show();
-		quitBtn->show();
+		quit_btn->show();
 	}
