@@ -16,16 +16,17 @@ namespace UI {
 		public:
 			explicit Menu(QWidget *parent = 0);
 		public slots:
-			void newGame();
+			void NewGame();
 		private slots:
-			void pauseMenu();
+			void PauseMenu();
 		private:
+			Game::GameWindow* window;
 			QGraphicsView* view;
-			Game::GameWindow* game_window;
-			QPushButton* quit_btn;
-			QPushButton* game_btn;
-			QLabel* game_title;
-			QPushButton* pause_btn;
+			Game::GameWindow* gameWindow;
+			QPushButton* quitBtn;
+			QPushButton* gameBtn;
+			QLabel* gameTitle;
+			QPushButton* pauseBtn;
 	};
 }
 #endif

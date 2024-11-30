@@ -20,9 +20,9 @@ namespace Game {
 		private:
 			int* height;
 			int* width;
-			QPixmap* tetroid_shape;
-			QPixmap* getShape(QPixmap* &tetroid_shape);
-			void movement(QKeyEvent* key_press);
+			QPixmap* tetroidShape;
+			QPixmap* GetShape(QPixmap* &tetroidShape);
+			void Movement(QKeyEvent* key_press);
 	};
 
 
@@ -34,7 +34,7 @@ namespace Game {
 		private:
 			Tetroid* tetromino;
 			QObject* tetrisLine; //placeholder, type is not yet chosen
-			Tetroid* saved_tetromino;
+			Tetroid* savedTetromino;
 	};
 }
 #endif
