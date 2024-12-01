@@ -12,31 +12,35 @@ Game::Tetroid::Tetroid(QGraphicsItem *parent) :
 
 	}
 
-/******* PRIVATE FUNCTIONS *******/
+/******* VIRTUAL FUNCTIONS *******/
 
-// NOTE: not needed as part of Game::Tetroid as it cares about QGraphicsItem in focus
-void QGraphicsItem::keyPressEvent(QKeyEvent* key_press) {
+// NOTE: Virtual class of QGraphicsItem
+void Game::Tetroid::keyPressEvent(QKeyEvent* key_press) {
+	// NOTE: tetromino moves left
 	if(key_press->key() == Qt::Key_Left && this->x() != 0) {
 		this->setX(this->x() - Game::TILE_SIZE);
-		std::cout << this->x();
 		return;
 	}
-	// FIX: Does not take into account tetromino width
-	if(key_press->key() == Qt::Key_Right && this->x() != Game::MIN_WIDTH) {
+	// NOTE: tetromino moves right
+	if(key_press->key() == Qt::Key_Right && this->x() + this->pixmap().width() != Game::MIN_WIDTH) {
 		this->setX(this->x() + Game::TILE_SIZE);
 		return;
 	}
-	// FIX: Does not take into account tetromino height
-	if(key_press->key() == Qt::Key_Down && this->y() != Game::MIN_HEIGHT) {
+	// NOTE: tetromino moves down
+	if(key_press->key() == Qt::Key_Down && this->y() + this->pixmap().height() != Game::MIN_HEIGHT) {
 		this->setY(this->y() + Game::TILE_SIZE);
+		return;
 	}
+	// NOTE: tetromino rotates 90 degrees 
 	// FIX:Does not rotate on at a centered point
 	if(key_press->key() == Qt::Key_Up) {
 		this->setRotation(this->rotation() + 90);
+		return;
 	}
-
 	return;
 }
+
+/******* PRIVATE FUNCTIONS *******/
 
 QPixmap* Game::Tetroid::getShape(QPixmap* &tetroid_shape) { // BUG - cmake exits; there's a missing library????
 /*

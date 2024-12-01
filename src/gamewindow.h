@@ -18,11 +18,10 @@ namespace Game {
 		public: 
 			explicit Tetroid(QGraphicsItem *parent);
 		private:
-			int* height;
-			int* width;
 			QPixmap* tetroid_shape;
 			QPixmap* getShape(QPixmap* &tetroid_shape);
-			void movement(QKeyEvent* key_press);
+			void checkCollisions();
+			void keyPressEvent(QKeyEvent* key_press);
 	};
 
 
