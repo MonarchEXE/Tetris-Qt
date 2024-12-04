@@ -18,6 +18,8 @@ namespace Game {
 		public: 
 			explicit Tetroid(QGraphicsItem *parent);
 		private:
+			int* height;
+			int* width;
 			QPixmap* tetroid_shape;
 			QPixmap* getShape(QPixmap* &tetroid_shape);
 			void checkCollisions();

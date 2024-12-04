@@ -5,8 +5,14 @@ const char* TETROMINO_IMAGE_PATH = "/home/kurt/Projects/C++/Tetris/lib/tetromino
 
 Game::Tetroid::Tetroid(QGraphicsItem *parent) :
 	QGraphicsPixmapItem(parent) {
-		tetroid_shape = new QPixmap();
+		width = new int;
+		height = new int;
+
+		tetroid_shape = new QPixmap();	
 		this->setPixmap(*Game::Tetroid::getShape(tetroid_shape));
+		*height = tetroid_shape->height();
+		*width = tetroid_shape->width();
+
 		this->setFlag(QGraphicsItem::ItemIsFocusable);
 		this->setFocus();
 
@@ -22,19 +28,29 @@ void Game::Tetroid::keyPressEvent(QKeyEvent* key_press) {
 		return;
 	}
 	// NOTE: tetromino moves right
-	if(key_press->key() == Qt::Key_Right && this->x() + this->pixmap().width() != Game::MIN_WIDTH) {
+	// BUG: Causes a segmentation fault
+	if(key_press->key() == Qt::Key_Right && this->x() + *this->width != Game::MIN_WIDTH) {
 		this->setX(this->x() + Game::TILE_SIZE);
 		return;
 	}
 	// NOTE: tetromino moves down
-	if(key_press->key() == Qt::Key_Down && this->y() + this->pixmap().height() != Game::MIN_HEIGHT) {
+	// BUG: Also a segmentation - if logic back on the table
+	// BUG: did not give SIG 11 at first -- now it does
+	if(key_press->key() == Qt::Key_Down && this->y() + *this->height != Game::MIN_HEIGHT) {
 		this->setY(this->y() + Game::TILE_SIZE);
 		return;
 	}
 	// NOTE: tetromino rotates 90 degrees 
 	// FIX:Does not rotate on at a centered point
 	if(key_press->key() == Qt::Key_Up) {
+		this->setTransformOriginPoint(30, 20);
+		int* temp = new int;
+		*temp = *this->height;
+		*this->height = *this->width;
+		*this->width = *temp;
 		this->setRotation(this->rotation() + 90);
+		delete(temp);
+		temp = nullptr;
 		return;
 	}
 	return;
@@ -46,7 +62,7 @@ QPixmap* Game::Tetroid::getShape(QPixmap* &tetroid_shape) { // BUG - cmake exits
 /*
  * Randomly selects a tetroid shape for game to draw
  * Tetromino rotation calls for img manipulation
- * TODO - Potenitally check for tetroid repitition to keep true(?) randomisation
+ * TODO: Potenitally check for tetroid repitition to keep true(?) randomisation
  */
 // int type cast handles the rounding
 	int* shape = new int;
@@ -54,7 +70,7 @@ QPixmap* Game::Tetroid::getShape(QPixmap* &tetroid_shape) { // BUG - cmake exits
 	strcpy(relativePath, TETROMINO_IMAGE_PATH);
 	*shape = std::rand() % 8;
 	switch(*shape){
-		// TODO - Update from absolute path to relative path search (or update the const to have the absolute path)
+		// TODO: Update from absolute path to relative path search (or update the const to have the absolute path)
 		case 1:
 			strcat(relativePath, "/Cube.png");
 			break;
