@@ -28,20 +28,17 @@ void Game::Tetroid::keyPressEvent(QKeyEvent* key_press) {
 		return;
 	}
 	// NOTE: tetromino moves right
-	// BUG: Causes a segmentation fault
 	if(key_press->key() == Qt::Key_Right && this->x() + *this->width != Game::MIN_WIDTH) {
 		this->setX(this->x() + Game::TILE_SIZE);
 		return;
 	}
 	// NOTE: tetromino moves down
-	// BUG: Also a segmentation - if logic back on the table
-	// BUG: did not give SIG 11 at first -- now it does
 	if(key_press->key() == Qt::Key_Down && this->y() + *this->height != Game::MIN_HEIGHT) {
 		this->setY(this->y() + Game::TILE_SIZE);
 		return;
 	}
 	// NOTE: tetromino rotates 90 degrees 
-	// FIX:Does not rotate on at a centered point
+	// BUG: rotates at a centered tile; collision detection is fucked up tho
 	if(key_press->key() == Qt::Key_Up) {
 		this->setTransformOriginPoint(30, 20);
 		int* temp = new int;
