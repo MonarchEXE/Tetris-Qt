@@ -21,6 +21,7 @@ namespace Game {
 			int* height;
 			int* width;
 			QPixmap* tetroid_shape;
+
 			QPixmap* getShape(QPixmap* &tetroid_shape);
 			void checkCollisions();
 			void keyPressEvent(QKeyEvent* key_press);
@@ -33,6 +34,7 @@ namespace Game {
 			void displayItems();
 
 		private:
+			QGraphicsPixmapItem* grid;
 			Tetroid* tetromino;
 			QObject* tetris_line; //placeholder, type is not yet chosen
 			Tetroid* saved_tetromino;
