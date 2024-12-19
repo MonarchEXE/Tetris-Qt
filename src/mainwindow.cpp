@@ -21,6 +21,8 @@ UI::Menu::Menu(QWidget *parent) :
 		connect(quit_btn, &QPushButton::clicked, this, &QWidget::close, Qt::QueuedConnection);
 	}
 
+/******* PUBLIC SLOTS *******/
+
 	void UI::Menu::newGame() {
 		game_title->hide();
 		game_btn->hide();
@@ -46,6 +48,9 @@ UI::Menu::Menu(QWidget *parent) :
 		*/
 
 	}
+
+/******* PRIVATE SLOTS *******/
+
 	void UI::Menu::pauseMenu() {
 		view->hide();
 		game_title->show();
